@@ -1,0 +1,11 @@
+{
+    "environments": [
+      {
+        "name": "dev",
+        "gitRef": "master",
+        "configOverride": {
+          "defaultDatabase": "${PROJECT_ID}"
+        }
+    }
+]
+}

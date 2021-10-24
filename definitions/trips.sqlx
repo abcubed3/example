@@ -1,0 +1,7 @@
+config {
+  type: "declaration",
+  database: "data-demo-269919",
+  schema: "dataform",
+  name: "trips",
+  description: "nyc yellow car trips"
+}

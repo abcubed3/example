@@ -1,0 +1,2 @@
+config { type: 'view' } 
+SELECT vendor_id, passenger_count, trip_distance from ${ref('trips')}

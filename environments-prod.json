@@ -1,0 +1,11 @@
+{
+    "environments": [
+      {
+        "name": "prod",
+        "gitRef": "master",
+        "configOverride": {
+          "defaultDatabase": "dataform_prod"
+        }
+    }
+]
+}
