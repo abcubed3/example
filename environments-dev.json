@@ -4,7 +4,7 @@
         "name": "dev",
         "gitRef": "master",
         "configOverride": {
-          "defaultDatabase": "${PROJECT_ID}"
+          "defaultDatabase": "dataform_dev"
         }
     }
 ]

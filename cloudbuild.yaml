@@ -1,18 +1,15 @@
 steps:
-   - name: 'node'
+  - name: 'node'
     entrypoint: 'npm'
     args: ['install', '@dataform/cli']
-
-  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-    entrypoint: 'gcloud'
-    args: ['cp', 'environment_${_ENV}.json', 'environment.json','&&','echo','{
-    "projectId": "${PROJECT_ID}",
-    "location": "US"
-}
-','>', '.df-credentials.json']
- - name: 'node'
+  - name: 'bash'
+    args: ['-c', 'cp environment_$ENV.json environment.json','&&','echo','-c','{
+    "projectId": $PROJECT_ID,
+    "location": "US"} > .df-credentials.json']
+    env:
+      - 'ENV=${_ENV}'
+      - 'PROJECT_ID=$PROJECT_ID'
+  - name: 'node'
     entrypoint: 'npm'
     args: ['dataform', 'run']
- 
-substitutions:
-    _ENV:'dev'
+  
